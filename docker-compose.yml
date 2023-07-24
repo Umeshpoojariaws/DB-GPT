@@ -20,11 +20,11 @@ services:
     command: python3 pilot/server/webserver.py
     environment:
       - MODEL_SERVER=http://llmserver:8000
-      - LOCAL_DB_HOST=db
+      #- LOCAL_DB_HOST=db
       - WEB_SERVER_PORT=7860
       - ALLOWLISTED_PLUGINS=db_dashboard
     depends_on:
-      - db
+     # - db
       - llmserver
     volumes:
       - ./models:/app/models
@@ -43,9 +43,9 @@ services:
       dockerfile: Dockerfile
     command: python3 pilot/server/llmserver.py
     environment:
-      - LOCAL_DB_HOST=db
+     # - LOCAL_DB_HOST=db
     depends_on:
-      - db
+     # - db
     volumes:
       - ./models:/app/models
     env_file:
@@ -72,5 +72,5 @@ services:
 
 
 volumes:
-  my-db:
+ # my-db:
   data:
