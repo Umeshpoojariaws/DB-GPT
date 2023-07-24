@@ -1,18 +1,18 @@
 version: '3.10'
 
 services:
-  db:
-    image: mysql:8.0.33
-    environment:
-      MYSQL_DATABASE: 'db'
-      MYSQL_USER: 'user'
-      MYSQL_PASSWORD: 'password'
-      MYSQL_ROOT_PASSWORD: 'aa123456'
-    ports:
-      - 3306:3306
-    volumes:
-      - my-db:/var/lib/mysql
-    restart: unless-stopped
+  #db:
+  #  image: mysql:8.0.33
+  #  environment:
+  #    MYSQL_DATABASE: 'db'
+  #    MYSQL_USER: 'user'
+  #    MYSQL_PASSWORD: 'password'
+  #    MYSQL_ROOT_PASSWORD: 'aa123456'
+  #  ports:
+  #    - 3306:3306
+  #  volumes:
+  #    - my-db:/var/lib/mysql
+  #  restart: unless-stopped
   webserver:
     build:
       context: .
